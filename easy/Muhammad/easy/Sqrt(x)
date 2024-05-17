@@ -1,0 +1,18 @@
+var mySqrt = function(x) {
+    var answer = 1;
+    if(x === 0){
+        answer =0;
+    } else {
+        for(let i=1; i<x; i++){
+            if(i*i===x){
+                answer = i;
+                break
+            }
+            if(i*i > x){
+                answer = i - 1;
+                break
+            }
+        }
+    }
+    return answer
+};
