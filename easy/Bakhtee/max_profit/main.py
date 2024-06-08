@@ -1,7 +1,7 @@
 def maxProfit(prices) -> int:
-    max_val = 0
-    for i in range(len(prices)):
-        for j in range(i, len(prices)):
-            if prices[j] - prices[i] > max_val:
-                max_val = prices[j] - prices[i]
-    return max_val
+    min_price = prices[0]
+    max_profit = 0
+    for price in prices[1:]:
+        max_profit = max(max_profit, price - min_price)
+        min_price = min(min_price, price)
+    return max_profit
